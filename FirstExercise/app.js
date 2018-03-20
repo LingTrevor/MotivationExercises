@@ -31,4 +31,24 @@ var recursiveAsyncReadLine = () => {
 recursiveAsyncReadLine();
 
 
+var story = "The data liia was gathered using Facebook's peeter infrastructure at that time, and many helen other developers had taken advantage of it - but the data was not authorised for piia them to share with others. The other key point is that even the people directly taking part in the margus personality quiz would have had no idea that they were potentially sharing their data oskar with Donald Trump's election campaign. ";
+var splitStory = story.split(' ');
+console.log(splitStory);
+var name = ['Peeter', 'Helen', 'Piia', 'Margus', 'Oskar', 'Liia'];
+console.log(name);
+name = name.map(name => name.toLowerCase());
+console.log(name);
+
+
+for( var i = 0; i < splitStory.length; i++){
+   console.log(splitStory[i]);
+};
+
+
+for(var j = 0; j < name.length; j++){
+    console.log(name[j]);
+};
+
+
+
 
