@@ -14,15 +14,24 @@ var timestampAmount = "";
 rl.question('Algus aasta? \n', (startYear) => {
     rl.question('Lõpp aasta? \n', (endYear) => {
         rl.question('Timestampide kogus? \n', (tsAmount) => {
-            // console.log('Start: ', startYear);
-            // console.log('End: ', endYear);
-            // console.log('TS Kogus: ', tsAmount);
+
             start += startYear;
             end += endYear;
             timestampAmount += tsAmount;
-            console.log('Start: ', start, 'End: ', end, 'TimeStamps Amount: ', timestampAmount);
+
+            randomDate(start, end);
+
             rl.close();
         });
     });
 });
+
+function randomDate(start, end) {
+    var start = new Date(start);
+    var end = new Date(end);
+    var date = new Date(+start + Math.random() * (end - start));
+    console.log('Start: ', start);
+    console.log('Lõpp: ', end);
+    console.log('Random TS: ', date);
+};
 
