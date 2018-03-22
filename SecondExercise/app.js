@@ -19,19 +19,22 @@ rl.question('Algus aasta? \n', (startYear) => {
             end += endYear;
             timestampAmount += tsAmount;
 
-            randomDate(start, end);
+            randomDate(start, end, timestampAmount);
 
             rl.close();
         });
     });
 });
 
-function randomDate(start, end) {
+function randomDate(start, end, timestampAmount) {
     var start = new Date(start);
     var end = new Date(end);
-    var date = new Date(+start + Math.random() * (end - start));
+    var amountTs = parseInt(timestampAmount);
     console.log('Start: ', start);
     console.log('Lõpp: ', end);
-    console.log('Random TS: ', date);
+    for (var i = 0; i < amountTs; i++) {
+        var date = new Date(+start + Math.random() * (end - start));
+        console.log("Random TS's: ", date);
+    };
 };
 
