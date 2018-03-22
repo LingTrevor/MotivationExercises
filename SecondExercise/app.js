@@ -59,6 +59,12 @@ function randomDate(start, end, timestampAmount) {
     console.log('Vanuste summa: ', agesSum);
     var avgAge = agesSum / ages.length;
     console.log('Keskmine vanus: ', avgAge);
+
+    var maxAge = Math.max.apply(Math, ages);
+    console.log('Suurim vanus: ', maxAge);
+
+    var minAge = Math.min.apply(Math, ages);
+    console.log('Väikseim vanus: ', minAge);
 };
 
 
