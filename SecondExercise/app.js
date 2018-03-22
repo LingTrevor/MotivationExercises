@@ -29,12 +29,16 @@ rl.question('Algus aasta? \n', (startYear) => {
 function randomDate(start, end, timestampAmount) {
     var start = new Date(start);
     var end = new Date(end);
-    var amountTs = parseInt(timestampAmount);
     console.log('Start: ', start);
-    console.log('Lõpp: ', end);
+    console.log('Lõpp: ', end, '\n');
+
+    var amountTs = parseInt(timestampAmount);
+    var generatedTimestamps = [];
     for (var i = 0; i < amountTs; i++) {
         var date = new Date(+start + Math.random() * (end - start));
+        generatedTimestamps.push(date);
         console.log("Random TS's: ", date);
     };
+    console.log('\n Genereeritud timestamps massiiv: \n', generatedTimestamps);
 };
 
