@@ -42,3 +42,36 @@ function randomDate(start, end, timestampAmount) {
     console.log('\n Genereeritud timestamps massiiv: \n', generatedTimestamps);
 };
 
+var generatedTimestamps = [];
+function random(start, end, amount) {
+    var start = new Date(start);
+    var end = new Date(end);
+    var amountTs = parseInt(amount);
+    for (var i = 0; i < amountTs; i++) {
+        var date = new Date(+start + Math.random() * (end - start));
+        generatedTimestamps.push(date);
+    };
+    console.log('\n Genereeritud timestamps massiiv: \n', generatedTimestamps);
+    var today = new Date();
+    var ages = [];
+    for (var i = 0; i < generatedTimestamps.length; i++) {
+        var msAge = today - generatedTimestamps[i];
+        var msAgeObj = new Date(msAge);
+        var age = Math.abs(msAgeObj.getUTCFullYear() - 1970);
+        console.log('Vanused: ', age, 'a.');
+    };
+};
+random('2000', '2005', '3');
+var timeNow = new Date();
+console.log('Time now: ', timeNow);
+//console.log('test\n',generatedTimestamps);
+
+// var year = '2000';
+// var years = new Date(year);
+// var age = timeNow - years.getTime();
+// var ageDate = new Date(age);
+// var realAge = Math.abs(ageDate.getUTCFullYear()-1970);
+// console.log('years: ', years);
+// console.log('age: ', age);
+// console.log('agedate: ', ageDate);
+// console.log('realage: ',realAge);
