@@ -27,6 +27,7 @@ rl.question('Algus aasta? \n', (startYear) => {
 });
 
 var generatedTimestamps = [];
+var months = [];
 function randomDate(start, end, timestampAmount) {
     var start = new Date(start);
     var end = new Date(end);
@@ -49,7 +50,10 @@ function randomDate(start, end, timestampAmount) {
         var msAgeObj = new Date(msAge);
         var age = Math.abs(msAgeObj.getUTCFullYear() - 1970);
         ages.push(age);
+        var month = new Date(generatedTimestamps[i]).getMonth() + 1;
+        months.push(month);
     };
+    console.log('Months: ', months);
     console.log('Vanuste massiiv: ', ages);
 
     var agesSum = 0;
