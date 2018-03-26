@@ -40,7 +40,10 @@ function randomDate(start, end, timestampAmount) {
         var date = new Date(+start + Math.random() * (end - start));
         generatedTimestamps.push(date);
     };
-    console.log('\n Genereeritud timestamps massiiv: \n', generatedTimestamps);
+    console.log('\n Genereeritud timestamps massiiv: \n', generatedTimestamps, '\n');
+
+    var ascendingTimestamps = generatedTimestamps.sort(function (a, b) { return a - b })
+    console.log('Kasvavas järjekorras Timestamps: \n ', ascendingTimestamps);
 
     var today = new Date();
     var ages = [];
@@ -55,6 +58,23 @@ function randomDate(start, end, timestampAmount) {
     };
     console.log('Months: ', months);
     console.log('Vanuste massiiv: ', ages);
+
+    let monthRepeat = 1;
+    let m = 0;
+    let item;
+    for (let i = 0; i < months.length; i++) {
+        for (let j = i; j < months.length; j++) {
+            if (months[i] == months[j])
+                m++;
+            if (monthRepeat < m) {
+                monthRepeat = m;
+                console.log("Monthrepeat", monthRepeat);
+                item = months[i];
+            }
+        }
+        m = 0;
+    }
+    console.log(`Kuu number: ${item} ( ${monthRepeat} Korda) `);
 
     var agesSum = 0;
     for (var i = 0; i < ages.length; i++) {
